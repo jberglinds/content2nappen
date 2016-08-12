@@ -32,7 +32,7 @@
             "image": "",
             "textitems": [
                 {
-                    "text_title": "För varje event finns en ansvarig person i Titel, se separat dokument. Denne person ansvarar för:",
+                    "text_title": "Denne person ansvarar för:",
                     "text": "Utrymning och uppsamling\n\nVid vistelse i META:\nAtt vara serveringsansvarig\nAtt utse en utrymningsledare\n\nVid olycka:\nAtt handlingsplanen för olycka följs\nFörsäkrar sig om att rätt nummer har ringts\nHålla kontakt med eventuell ambulans etc.\nSe till att skadade personer blir omhändertagna. Om flera - fördela ansvaret\nFörsäkrar sig om att sjukvårdsansvarig på plats tar sitt ansvar "
                 }
             ]
@@ -43,11 +43,11 @@
             "image": "",
             "textitems": [
                 {
-                    "text_title": "Det finns en sjukvårdsansvarig i varje mottagningsgren",
+                    "text_title": "En sjukvårdsansvarig i varje mottagningsgren",
                     "text": "Denne person har gått LABC.\n\nDenne person har alltid med sig sjukvårdskit.\n\nDenne person är medveten om att den behöver ta ett större ansvar vid olycka. "
                 },
                 {
-                    "text_title": "I varje nØllegrupp finns en fadder som har gått LABC",
+                    "text_title": "Varje grupp har en fadder som har gått LABC",
                     "text": "Denne person bär alltid med sig sjukvårdskit\n\nDenne ansvarar för att agera som ansvarig vid krissituation då nØllegruppen är ensam.\nT.ex. ansvarar för att ringa alla nummer, se Nummer att ringa "
                 }
             ]
@@ -100,7 +100,7 @@
                     "text": "Olyckor med mindre skador\nObehöriga, störande eller mentalt instabila människor\nMindre inbrott eller stölder\nMindre vattenläckage "
                 },
                 {
-                    "text_title": "Allvarliga händelser - ring 112 (se Om olyckan är framme)",
+                    "text_title": "Allvarliga händelser - ring 112",
                     "text": "Död\nAllvarlig skada\nBrand\nAllvarliga brott\nRån\nHot mot personer eller aktiviteter\nAllvarliga vattenläckor "
                 }
             ]
