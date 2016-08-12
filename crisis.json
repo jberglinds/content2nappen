@@ -8,6 +8,111 @@
                 {
                     "text_title": "Nummer att ringa",
                     "text": "1. SOS 112\n2. KTH’s larmnummer 08-790 7700\n3. Storasyster Agnes Åman 0705-80 71 59\n\nOm Storasyster inte svarar: \nÖfverdrif Hanna Nyblom 072-2037227\n\nOm Öfverdrif inte svarar: \nMottaggningssamordnare Erica Dragon 0793-4798688\n\nVidare samtal ansvarar Storasyster eller Öfverdrif för att ringa."
+                },
+                {
+                    "text_title": "Handlingsplan",
+                    "text": "1. Larma, 112 och KTH’s larmnummer\nOm du ringer 112, meddela:\na. Vad har hänt?\nb. Var behövs hjälpen?\nc. Vem är du som ringer? (inte ett krav, man kan vara anonym)\nd. Vilket telefonnummer ringer du ifrån?\ne. Skador/tillstånd?\nf. Medvetslös/fastklämd?\ng. Inomhus/utomhus?\nh. Namn, kön och ålder på den det gäller\n\n2. ABCDE\nAirway: Fria luftvägar\nBreathing: Andas personen\nCirculation: Puls\nDisability: Är personen vid medvetandet?\nExposure: Trauma, sår, kroppstemperatur\n\n3. Behåll lugnet\n\n4. Ring Storasyster "
+                }
+            ]
+        },
+        {
+            "title": "Krisplan för mottagningspersonalen",
+            "subtitle": "Kontakt",
+            "image": "",
+            "textitems": [
+                {
+                    "text_title": "Kontakta ansvarig person i Titel",
+                    "text": "Om den personen inte svarar:\nStorasyster Agnes Åman 0705-80 71 59\n\nOm Storasyster inte svarar:\nÖfverdrif Hanna Nyblom 072-2037227\n\nOm Öfverdrif inte svarar:\nMottagningssamordnare Erica Dragon 0793-4798688 "
+                }
+            ]
+        },
+        {
+            "title": "Ansvarig i Titel under event",
+            "subtitle": "Vad denne person ansvarar för",
+            "image": "",
+            "textitems": [
+                {
+                    "text_title": "För varje event finns en ansvarig person i Titel, se separat dokument. Denne person ansvarar för:",
+                    "text": "Utrymning och uppsamling\n\nVid vistelse i META:\nAtt vara serveringsansvarig\nAtt utse en utrymningsledare\n\nVid olycka:\nAtt handlingsplanen för olycka följs\nFörsäkrar sig om att rätt nummer har ringts\nHålla kontakt med eventuell ambulans etc.\nSe till att skadade personer blir omhändertagna. Om flera - fördela ansvaret\nFörsäkrar sig om att sjukvårdsansvarig på plats tar sitt ansvar "
+                }
+            ]
+        },
+        {
+            "title": "Sjukvårdsansvariga",
+            "subtitle": "Om sjukvårdsansvariga",
+            "image": "",
+            "textitems": [
+                {
+                    "text_title": "Det finns en sjukvårdsansvarig i varje mottagningsgren",
+                    "text": "Denne person har gått LABC.\n\nDenne person har alltid med sig sjukvårdskit.\n\nDenne person är medveten om att den behöver ta ett större ansvar vid olycka. "
+                },
+                {
+                    "text_title": "I varje nØllegrupp finns en fadder som har gått LABC",
+                    "text": "Denne person bär alltid med sig sjukvårdskit\n\nDenne ansvarar för att agera som ansvarig vid krissituation då nØllegruppen är ensam.\nT.ex. ansvarar för att ringa alla nummer, se Nummer att ringa "
+                }
+            ]
+        },
+        {
+            "title": "Checklista vid brand",
+            "subtitle": "Serveringsansvarig, utrymningsledare",
+            "image": "",
+            "textitems": [
+                {
+                    "text_title": "Serveringsansvarig",
+                    "text": "Om en brand utbryter – agera direkt!\n\nStarta brandlarmet\n\nRing alla samtal alternativt se till att någon gör det, se Nummer att ringa\n\nChecka med utrymningsledaren att lokalen är utrymd\n\nSamordna med KTH Säkerhetsberedskap och väktare när de anlänt\n\nInformera om personer finns kvar i lokalen "
+                },
+                {
+                    "text_title": "Utrymningsledare",
+                    "text": "Om en brand utbryter – agera direkt!\n\nBe alla att lämna lokalen\n\nSätt på dig utrymningsväst\n\nSe till att lokalen är utrymd utan att riskera din egen säkerhet\nKolla om möjligt:\nToaletter\nMötesrum\nFörrådet\nSpritförrådet\nStädskrubb\netc.\n\nSamlas vid återuppsamlingsplatsen\n\nRäknar in alla och rapportera till Storasyster\n\nRapportera till serveringsansvarig om huruvida lokalen är helt utrymd "
+                }
+            ]
+        },
+        {
+            "title": "Uppsamlingsplatser",
+            "subtitle": "Från META, Nymble och spontan plats",
+            "image": "",
+            "textitems": [
+                {
+                    "text_title": "Uppsamlingsplats från META",
+                    "text": "Mitt på borggården"
+                },
+                {
+                    "text_title": "Uppsamlingsplats från Nymble",
+                    "text": " Parken mellan Nymble och Flyg"
+                },
+                {
+                    "text_title": "Om spontan uppsamlingsplats används",
+                    "text": "Rapportera om detta i samtliga samtal"
+                }
+            ]
+        },
+        {
+            "title": "Krishantering",
+            "subtitle": "Händelser som defineras som kris",
+            "image": "",
+            "textitems": [
+                {
+                    "text_title": "Definition",
+                    "text": "Inom mottagningen beskrivs kris som en oväntad händelse som riskerar att skada mottagare, nyantagna eller verksamhet."
+                },
+                {
+                    "text_title": "Mindre allvarliga händelser",
+                    "text": "Olyckor med mindre skador\nObehöriga, störande eller mentalt instabila människor\nMindre inbrott eller stölder\nMindre vattenläckage "
+                },
+                {
+                    "text_title": "Allvarliga händelser - ring 112 (se Om olyckan är framme)",
+                    "text": "Död\nAllvarlig skada\nBrand\nAllvarliga brott\nRån\nHot mot personer eller aktiviteter\nAllvarliga vattenläckor "
+                }
+            ]
+        },
+        {
+            "title": "Krisplan för Storasyster/Öfverdrif (Mottagningsansvariga)",
+            "subtitle": "",
+            "image": "",
+            "textitems": [
+                {
+                    "text_title": "Händelseförlopp",
+                    "text": "1. Vid samtal från ansvarig på plats:\na. Försäkrar sig om att 112 är ringt\nb. Försäkrar sig om att KTH’s larmnummer är ringt\nc. Samla information om utrymning\nd. Samla information om återsamlingsplats\ne. Ta reda på vem som är utrymingsledare\n\n2. Ringer THS mottagningssamordnare Erica Dragon 08-790 7700\n\n3. Ringer CSC - Carina 08-790 6234\nAnnars: \na. Maria Widlund 08-7909754 \nb. Jan Gulliksen 08-7909538\n\n4. Ringer Datasektionens orförande Henrik Johansson 073-035 46 73\na. Försäkra sig om att ordförande ringer THS ordförande Pontus Gard 08-790 98 84\n\n5. Ta emot samtal från utrymningsledare \na. Annars ta kontakt med den personen "
                 }
             ]
         }

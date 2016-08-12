@@ -7,6 +7,7 @@ with open(filename) as data_file:
 
 	output_group = {}
 	# Traverserar indata och bygger utdata som nAppen kan tolka
+	i = 0
 	for item in data["content"]:
 
 		text_groups = dict()
@@ -24,12 +25,13 @@ with open(filename) as data_file:
 			index = index+1
 
 
-		output_group[item["title"]] = {
+		output_group["group_%d" % i] = {
 			"groups": text_groups,
 			"image": item["image"],
 			"subtitle": item["subtitle"],
 			"title": item["title"]
 		}
+		i = i+1
 
 	# Dumpar objektet för n0llegrupper till en .json-fil
 	outname = filename.replace(".json", "-out.json")
