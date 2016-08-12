@@ -1,5 +1,5 @@
 import MySQLdb as mariadb
-import json
+import json, os
 
 # Det används HTML i vissa länkar från STÖn vilket nAppen inte har stöd för
 from html.parser import HTMLParser
@@ -121,6 +121,7 @@ def responsibilities2json():
 			responsibilities_group[id]["groups"].pop("g_1", None)
 			
 	# Dumpar objektet för ansvarsområden till en .json-fil
+	os.makedirs("output/", exist_ok=True)
 	with open('output/responsibilities-out.json', 'w') as outfile:
 		json.dump(responsibilities_group, outfile, indent=4, sort_keys=True)
 
@@ -190,6 +191,7 @@ def n0llegroups2json():
 		}
 		
 	# Dumpar objektet för n0llegrupper till en .json-fil
+	os.makedirs("output/", exist_ok=True)
 	with open('output/n0llegroups-out.json', 'w') as outfile:
 		json.dump(n0llegroups_group, outfile, indent=4, sort_keys=True)
 

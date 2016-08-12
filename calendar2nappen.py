@@ -1,6 +1,6 @@
 from icalendar import Calendar, Event
 from datetime import datetime, timedelta
-import json
+import json, os
 
 # Läser in en .ics-fil i samma mapp som skriptet.
 filename = input('Filnamn på indatafil i .json, (ex: \"backstage-cal.ics\"): ') or 'backstage-cal.ics'
@@ -29,6 +29,7 @@ with open(filename) as file:
 
 	outname = filename.replace(".ics", ".json")
 	print("Dumpar fil till output/"+outname)
+	os.makedirs("output/", exist_ok=True)
 	with open('output/'+outname, 'w') as outfile:
 		json.dump(calendar_output, outfile, indent=4, sort_keys=True)
 		print("Done!")
