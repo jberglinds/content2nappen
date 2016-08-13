@@ -29,7 +29,7 @@
             "textitems": [
                 {
                     "text_title": "Beskrivning/Instruktioner",
-                    "text": "Som evolutionsleken men när någon förlorar börjar man heja på personen som vann som en hejarklack och ropar deras namn och klappar. \n\nDetta fortsätter till alla hejar på en ensam vinnare."
+                    "text": "Som evolutionsleken men när någon förlorar börjar man heja på personen som vann som en hejarklack och ropar deras namn och klappar. \n\nDetta fortsätter till alla hejar på en ensam vinnare.\n\nSom vi körde på Osqvik!"
                 }
             ]
         },
@@ -40,7 +40,7 @@
             "textitems": [
                 {
                     "text_title": "Beskrivning/Instruktioner",
-                    "text": "Alla går runt och skakar hand med varandra, och säger sitt namn. T.ex. \"Jag heter Helena\" - \"Jag heter Karl\". Från det ögonblicket man skakat hand, byter man också namn.\n\nAlltså heter Helena numera Karl och säga sitt nya namn till den nästa person hon skakar hand med. Så om Helena (som numera heter Karl för ett kort ögonblick) skakar hand med Johan så heter hon Johan, och Johan heter Karl.\n\nFortsätt tills alla fått tillbaka sitt egna namn."
+                    "text": "Alla går runt och skakar hand med varandra, och säger sitt namn. \nT.ex. \"Jag heter Helena\" - \"Jag heter Karl\". \nFrån det ögonblicket man skakat hand, byter man också namn.\n\nAlltså heter Helena numera Karl och säga sitt nya namn till den nästa person hon skakar hand med. Så om Helena (som numera heter Karl för ett kort ögonblick) skakar hand med Johan så heter hon Johan, och Johan heter Karl.\n\nFortsätt tills alla fått tillbaka sitt egna namn."
                 }
             ]
         },
@@ -73,7 +73,7 @@
             "textitems": [
                 {
                     "text_title": "Beskrivning/Instruktioner",
-                    "text": "Alla börjar som ägg och går runt. Stötar man in i en av samma sort så kör man sten-sax-påse. Vinnaren går upp en nivå och förloraren går ner en nivå (dock aldrig under ägg).\n\nNivåerna ser ut som följande:\nÄgg -> kyckling -> monster -> superman\n\nSuperman springer runt ett varv och showar off som fan (vinner).\nFortsätt tills en eller några förlorare är kvar.\n\nViktigt att bara köra sten-sax-påse mot dom av samma sort."
+                    "text": "Alla börjar som ägg och går runt. Stötar man in i en av samma sort så kör man sten-sax-påse. Vinnaren går upp en nivå och förloraren går ner en nivå (dock aldrig under ägg).\n\nNivåerna ser ut som följande:\nÄgg \u2192 Kyckling \u2192 Monster \u2192 Superman\n\nSuperman springer runt ett varv och showar off som fan (vinner).\nFortsätt tills en eller några förlorare är kvar.\n\nViktigt att bara köra sten-sax-påse mot dom av samma sort."
                 }
             ]
         },
@@ -117,7 +117,7 @@
             "textitems": [
                 {
                     "text_title": "Beskrivning/Instruktioner",
-                    "text": "Alla står i en ring. \nEn person ställer sig i mitten av ringen och pekar på någon annan och säger ett namn på en rörelse. Den som blir pekad på måste göra den rörelsen, men även de två på varje sida måste göra en rörelse. \n\nMisslyckas någon eller är för långsam byter den plats med personen i mitten av ringen.\n\nExempel på rörelser:\nBrödrosten\nCharlies änglar\nJames Bond\nGiraff\nElefant\nTvättmaskinen\nPingvin"
+                    "text": "Alla står i en ring. \nEn person ställer sig i mitten av ringen och pekar på någon annan och säger ett namn på en rörelse. Den som blir pekad på måste göra den rörelsen, men även de två på varje sida måste göra en rörelse. \n\nMisslyckas någon eller är för långsam byter den plats med personen i mitten av ringen.\n\nExempel på rörelser:\n\u2022 Brödrosten\n\u2022 Charlies änglar\n\u2022 James Bond\n\u2022 Giraff\n\u2022 Elefant\n\u2022 Tvättmaskinen\n\u2022 Pingvin"
                 }
             ]
         },

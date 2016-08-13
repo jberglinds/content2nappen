@@ -1,3 +1,5 @@
+# Jonathan Berglind, 2016
+# jonatber@kth.se
 import json, os
 
 # Läser in en .json-fil i samma mapp som skriptet.

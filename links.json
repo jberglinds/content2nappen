@@ -1,0 +1,49 @@
+{
+    "content": [
+        {
+            "title": "Datasektionen",
+            "subtitle": "",
+            "image": "https://dl.dropboxusercontent.com/u/13066068/nAppen/data.jpg",
+            "textitems": [
+                {
+                    "text_title": "Datasektionens hemsida",
+                    "text": "https://datasektionen.se \nPå Datasektionens hemsida hittar du info om allt som rör Konglig Datasektionen. Nyheter, kalender, sektionsinfo, nämnder, kontaktuppgifter m.m."
+                },
+                {
+                    "text_title": "Mottagningen",
+                    "text": "https://datasektionen.se/namnder/mottagningen \nInformation om Datasektionens Mottagning av nyantagna studenter, schema och kontaktinformation."
+                }
+            ]
+        },
+        {
+            "title": "THS",
+            "subtitle": "Tekniska Högskolans Studentkår",
+            "image": "https://dl.dropboxusercontent.com/u/13066068/nAppen/ths.jpg",
+            "textitems": [
+                {
+                    "text_title": "THS hemsida",
+                    "text": "http://ths.kth.se \nPå kårens hemsida hittar du info om studentlivet på KTH, vad kåren arbetar med och varför du borde gå med."
+                }
+            ]
+        },
+        {
+            "title": "KTH",
+            "subtitle": "Kungliga Tekniska Högskolan",
+            "image": "https://dl.dropboxusercontent.com/u/13066068/nAppen/kth.jpg",
+            "textitems": [
+                {
+                    "text_title": "KTH:s hemsida",
+                    "text": "http://.kth.se \nPå KTHs hemsida hittar du information och nyheter från KTH samt det sociala studienätverket KTH Social (inloggning krävs) som används av studenter och kursansvariga för kommunikation."
+                },
+                {
+                    "text_title": "CSC:s hemsida",
+                    "text": "http://.csc.kth.se \nCSC är skolan för Datavetenskap och Kommunikation. Här hittar du information och nyheter som rör Civilingenjörsprogrammen i Datateknik och Medieteknik på KTH."
+                },
+                {
+                    "text_title": "Datateknikprogrammets sida",
+                    "text": "https://www.kth.se/utbildning/civilingenjor/datateknik \nInformation från KTH om utbildningen. Kursöversikt, info om utlandsstudier, jobb & karriär"
+                }
+            ]
+        }
+    ]
+}

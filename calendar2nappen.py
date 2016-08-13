@@ -1,17 +1,26 @@
+# Jonathan Berglind, 2016
+# jonatber@kth.se
 from icalendar import Calendar, Event
 from datetime import datetime, timedelta
 import json, os
 
 # Läser in en .ics-fil i samma mapp som skriptet.
-filename = input('Filnamn på indatafil i .json, (ex: \"backstage-cal.ics\"): ') or 'backstage-cal.ics'
+filename = input('Filnamn på indatafil i .ics, (ex: \"backstage-cal.ics\"): ') or 'backstage-cal.ics'
 with open(filename) as file:   
 	cal = Calendar.from_ical(file.read())
 
 	calendar_output = dict()
 	index = 0
 	for event in cal.walk("VEVENT"):
-		startTime = event.get("DTSTART").dt+timedelta(hours=2)
+		startTime = event.get("DTSTART").dt+timedelta(hours=2) # nAppen tar UTC
 		endTime = event.get("DTEND").dt+timedelta(hours=2)
+
+		# Kollar efter heldagsevent, stödjer bara 1dags-event nu.
+		daydiff = (endTime-startTime)/timedelta(hours=24)
+		if daydiff % 1 == 0:
+			allDay = "true"
+		else:
+			allDay = "false"
 
 		calendar_output["event_%d" % index] = {
 			"type" : "event",
@@ -22,6 +31,7 @@ with open(filename) as file:
 				"lng" : "",
 				"name" : str(event.get("LOCATION"))
 			},
+			"allDay": allDay,
 			"time": str(startTime.strftime("%Y-%m-%dT%H:%MZ")),
 			"endTime": str(endTime.strftime("%Y-%m-%dT%H:%MZ"))
 		}
