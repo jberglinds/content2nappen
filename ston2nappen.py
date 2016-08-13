@@ -1,7 +1,9 @@
+# Jonathan Berglind, 2016
+# jonatber@kth.se
 import MySQLdb as mariadb
 import json, os
 
-# Det används HTML i vissa länkar från STÖn vilket nAppen inte har stöd för
+# Det används HTML i vissa länkar från STÖn vilket nAppen inte har stöd för.
 from html.parser import HTMLParser
 class MLStripper(HTMLParser):
     def __init__(self):
@@ -14,6 +16,7 @@ class MLStripper(HTMLParser):
     def get_data(self):
         return ''.join(self.fed)
 
+# Plockar bort all HTML från en sträng.
 def strip_tags(html):
     s = MLStripper()
     s.feed(html)
@@ -39,7 +42,7 @@ for staff_id, name, position_name, titel in cursor:
 	else:
 		titleForStaff[staff_id] = name
 
-# Skapar en map från ett personal-id till ett person-objekt, som nAppen direkt kan tolka.
+# Skapar en map från ett personal-id till ett person-objekt i nAppen
 cursor.execute("SELECT id, email, first_name, last_name, cell_phone, login FROM staff")
 staff = dict()
 for id, email, first_name, last_name, cell_phone, login in cursor:
@@ -52,26 +55,29 @@ for id, email, first_name, last_name, cell_phone, login in cursor:
 			"type": "person"
 		}
 
-def responsibilities2json():
-	# Skapar en map från ett ansvarsområdes-id till en array av personal-id'n som är ansvariga för området.
-	cursor.execute("SELECT responsibility_id, staff_id FROM assignments")
-	staffForResponsibility = dict()
-	for responsibility_id, staff_id in cursor:
-		if responsibility_id in staffForResponsibility:
-			staffForResponsibility[responsibility_id].append(staff_id)
-		else: 
-			staffForResponsibility[responsibility_id] = [staff_id]
+# Skapar en map från ett ansvarsområdes-id till en array av personal-id'n som är ansvariga för området.
+cursor.execute("SELECT responsibility_id, staff_id FROM assignments")
+staffForResponsibility = dict()
+for responsibility_id, staff_id in cursor:
+	if responsibility_id in staffForResponsibility:
+		staffForResponsibility[responsibility_id].append(staff_id)
+	else: 
+		staffForResponsibility[responsibility_id] = [staff_id]
 
-	# Plockar ut alla asnvarsområden som är aktiva för året (ej gömda) och skapar ett grupp-objekt som nAppen direkt kan tolka.
+def responsibilities2json():
+	# Plockar ut alla ansvarsområden som är aktiva för året (ej de gömda) och skapar ett grupp-objekt i nAppen
 	cursor.execute("SELECT id, title, description, notes, titel_contact_id FROM responsibilities WHERE occurrence_id=%s AND titel=0 AND upper(title) NOT LIKE \"%%LEGACY%%\" ORDER BY title", (OCCURENCE_ID,))
 	responsibilities_group = {}
 	for id, title, description, notes, titel_contact_id in cursor:
+
+		# Skapar ett objekt som består av person-objekten för de ansvariga personerna
 		responsible_staff = dict()
 		if id in staffForResponsibility:
 			for staffID in staffForResponsibility[id]:
 				staffData = staff[staffID]
 				responsible_staff[staffData["name"]] = staffData
 
+		# Skapar själva sidan för ett ansvarsområde
 		responsibilities_group[id] = {
 			"groups": {
 				"g_0": {
@@ -98,6 +104,7 @@ def responsibilities2json():
 				},
 				"g_3": {
 					"items": {
+						# Lägger till person-objektet för ansvarig titel om det finns någon
 						"i_0" : staff[titel_contact_id] if titel_contact_id in staff else None
 					},
 					"title": "Kontaktperson i Titel"
@@ -122,11 +129,13 @@ def responsibilities2json():
 			
 	# Dumpar objektet för ansvarsområden till en .json-fil
 	os.makedirs("output/", exist_ok=True)
+	print("Dumpar fil till output/responsibilities-out.json")
 	with open('output/responsibilities-out.json', 'w') as outfile:
 		json.dump(responsibilities_group, outfile, indent=4, sort_keys=True)
+		print("Done!")
 
 
-# Skapar en map från ett n0lle-id till ett person-objekt, som nAppen direkt kan tolka.
+# Skapar en map från ett n0lle-id till ett person-objekt i nAppen
 cursor.execute("SELECT id, first_name, last_name, username FROM n0llan")
 n0llan = dict()
 for id, first_name, last_name, username in cursor:
@@ -139,35 +148,38 @@ for id, first_name, last_name, username in cursor:
 			"type": "person"
 		}
 
+# Skapar en map från ett n0llegrupps-id till en array av n0lle-id'n som är med i gruppen.
+cursor.execute("SELECT n0llegroup_id, id FROM n0llan")
+n0llanFor0group = dict()
+for n0llegroup_id, id in cursor:
+	if n0llegroup_id in n0llanFor0group:
+		n0llanFor0group[n0llegroup_id].append(id)
+	else: 
+		n0llanFor0group[n0llegroup_id] = [id]
+
+# Skapar en map från ett n0llegrupps-id till en array av personal-id'n som är favvodaddor för gruppen.
+cursor.execute("SELECT n0llegroup_id, id FROM staff WHERE n0llegroup_id IS NOT NULL;")
+daddorFor0group = dict()
+for n0llegroup_id, id in cursor:
+	if n0llegroup_id in daddorFor0group:
+		daddorFor0group[n0llegroup_id].append(id)
+	else: 
+		daddorFor0group[n0llegroup_id] = [id]
+
 def n0llegroups2json():
-	# Skapar en map från ett n0llegrupps-id till en array av n0lle-id'n som är med i gruppen.
-	cursor.execute("SELECT n0llegroup_id, id FROM n0llan")
-	n0llanFor0group = dict()
-	for n0llegroup_id, id in cursor:
-		if n0llegroup_id in n0llanFor0group:
-			n0llanFor0group[n0llegroup_id].append(id)
-		else: 
-			n0llanFor0group[n0llegroup_id] = [id]
-
-	# Skapar en map från ett n0llegrupps-id till en array av personal-id'n som är favvodaddor för gruppen.
-	cursor.execute("SELECT n0llegroup_id, id FROM staff WHERE n0llegroup_id IS NOT NULL;")
-	daddorFor0group = dict()
-	for n0llegroup_id, id in cursor:
-		if n0llegroup_id in daddorFor0group:
-			daddorFor0group[n0llegroup_id].append(id)
-		else: 
-			daddorFor0group[n0llegroup_id] = [id]
-
 	# Skapar en map från ett 0-grupps id till ett namn, typ 7 -> "Gubben i Månen"
 	cursor.execute("SELECT id, name FROM n0llegroups")
 	n0llegroups_group = {}
 	for id, name in cursor:
+
+		# Skapar ett objekt som består av person-objekten för de ansvariga personerna (favvodaddor)
 		responsible_staff = dict()
 		if id in daddorFor0group:
 			for staffID in daddorFor0group[id]:
 				staffData = staff[staffID]
 				responsible_staff[staffData["name"]] = staffData
 
+		# Skapar ett objekt som består av person-objekten medlemmarna i gruppen
 		members = dict()
 		if id in n0llanFor0group:
 			for n0lleID in n0llanFor0group[id]:
@@ -191,9 +203,11 @@ def n0llegroups2json():
 		}
 		
 	# Dumpar objektet för n0llegrupper till en .json-fil
+	print("Dumpar fil till output/n0llegroups-out.json")
 	os.makedirs("output/", exist_ok=True)
 	with open('output/n0llegroups-out.json', 'w') as outfile:
 		json.dump(n0llegroups_group, outfile, indent=4, sort_keys=True)
+		print("Done!")
 
 
 def main():

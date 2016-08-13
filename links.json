@@ -33,11 +33,11 @@
             "textitems": [
                 {
                     "text_title": "KTH:s hemsida",
-                    "text": "http://.kth.se \nPå KTHs hemsida hittar du information och nyheter från KTH samt det sociala studienätverket KTH Social (inloggning krävs) som används av studenter och kursansvariga för kommunikation."
+                    "text": "http://kth.se \nPå KTHs hemsida hittar du information och nyheter från KTH samt det sociala studienätverket KTH Social (inloggning krävs) som används av studenter och kursansvariga för kommunikation."
                 },
                 {
                     "text_title": "CSC:s hemsida",
-                    "text": "http://.csc.kth.se \nCSC är skolan för Datavetenskap och Kommunikation. Här hittar du information och nyheter som rör Civilingenjörsprogrammen i Datateknik och Medieteknik på KTH."
+                    "text": "http://csc.kth.se \nCSC är skolan för Datavetenskap och Kommunikation. Här hittar du information och nyheter som rör Civilingenjörsprogrammen i Datateknik och Medieteknik på KTH."
                 },
                 {
                     "text_title": "Datateknikprogrammets sida",
