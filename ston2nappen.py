@@ -64,6 +64,12 @@ for responsibility_id, staff_id in cursor:
 	else: 
 		staffForResponsibility[responsibility_id] = [staff_id]
 
+# Skapar en map från ett ansvarsområdes-id till en array av personal-id'n som är ansvariga för området.
+cursor.execute("SELECT responsibility_id, name FROM branches_responsibilities r, branches b WHERE r.branch_id = b.id")
+branchnameForResponsibility = dict()
+for responsibility_id, name in cursor:
+		branchnameForResponsibility[responsibility_id] = name
+
 def responsibilities2json():
 	# Plockar ut alla ansvarsområden som är aktiva för året (ej de gömda) och skapar ett grupp-objekt i nAppen
 	cursor.execute("SELECT id, title, description, notes, titel_contact_id FROM responsibilities WHERE occurrence_id=%s AND titel=0 AND upper(title) NOT LIKE \"%%LEGACY%%\" ORDER BY title", (OCCURENCE_ID,))
@@ -120,7 +126,7 @@ def responsibilities2json():
 				}
 			},
 			"image": "",
-			"subtitle": "",
+			"subtitle": branchnameForResponsibility[id] if id in branchnameForResponsibility else "",
 			"title": title
 		}
 		if notes == "":
