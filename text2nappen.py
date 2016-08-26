@@ -1,10 +1,18 @@
 # Jonathan Berglind, 2016
 # jonatber@kth.se
+#
+# Det här skriptet konverterar .json i en form till .json på den formen
+# som nAppen kan läsa. Se typ links.json som är en indatafil.
+#
+# Varför? firebase som nAppen använder klarar av någon anledning inte
+# av arrayer, bara dicts. Det gör allt onödigt komplicerat när man ska
+# skriva det själv. Om man dessutom bara behöver text och inte
+# kontaktobjekt i info-modulen kan indata .json vara väldigt simpel.
 import json, os
 
 # Läser in en .json-fil i samma mapp som skriptet.
 filename = input('Filnamn på indatafil i .json, (ex: \"games.json\"): ') or 'games.json'
-with open(filename) as data_file:    
+with open(filename) as data_file:
 	data = json.load(data_file)
 
 	output_object = {}
@@ -42,4 +50,3 @@ with open(filename) as data_file:
 	with open('output/'+outname, 'w') as outfile:
 		json.dump(output_object, outfile, indent=4, sort_keys=True)
 		print("Done!")
-		
