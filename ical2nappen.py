@@ -17,8 +17,9 @@ import json, os, pytz
 TIMEZONE = pytz.timezone("Europe/Stockholm")
 
 output_object = dict()
+
 event_index = 0
-# Lägger till ett nytt event till objektet som sedan skrivs ut som .json
+# Lägger till ett nytt event till objektet som sedan dumpas som .json
 def addEvent(title, description, locationName, allDay, startTime, endTime):
 	global event_index, output_object
 
@@ -64,9 +65,20 @@ with open(filename) as file:
 		duration = endTime - startTime
 
 		# Återkommande event?
-		# Dessa vill vi expandera till ett event för varje dag och sedan
-		# lägga åt sidan. Detta då ett senare event i .ics-filen kan skriva
-		# över någon av dagarna.
+		#
+		# Dessa anges som ett event i ical-filen med en regel som säger
+		# vilka dagar det händer på. Ex:
+		# RRULE:FREQ=WEEKLY;COUNT=2;BYDAY=SU,MO,TU,WE,TH,FR,SA
+		#
+		# nAppen har ingen funktion för återkommande event, därför
+		# måste dessa expanderas till ett event för varje dag.
+		# Dessutom finns det fall då ett av eventen i ett gäng
+		# återkommande ändras, typ får annan tid eller annan beskrivning.
+		# I detta läge skapas ett separat event i ical-filen med ett
+		# "RECCURENCE_ID" som pekar på eventet som skrivs över.
+		#
+		# Här expanderas ett återkommande event till ett för varje dag
+		# och läggs sedan åt sidan för att eventuellt skrivas över sen.
 		rule = event.get("RRULE")
 		if rule is not None:
 			rrset = rruleset()
@@ -85,7 +97,8 @@ with open(filename) as file:
 					"title": title,
 					"description": description
 				}
-		# Ej återkommande event
+
+		# Ej återkommande event, dessa kan direkt läggas in i output.
 		else:
 			# Kollar om ett event ska skriva över något återkommande
 			# Alltså om det har något recurrence-id.
@@ -107,7 +120,7 @@ with open(filename) as file:
 			else:
 				addEvent(title, description, locationName, "false", startTime, endTime)
 
-	# Lägg till de återkommande eventen.
+	# Lägger till de återkommande eventen som vi tidigare lade undan.
 	for key, val in recurringEvents.items():
 		addEvent(val["title"], val["description"], val["location"], "false", val["startTime"], val["endTime"])
 

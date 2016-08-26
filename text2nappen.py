@@ -6,8 +6,8 @@
 #
 # Varför? firebase som nAppen använder klarar av någon anledning inte
 # av arrayer, bara dicts. Det gör allt onödigt komplicerat när man ska
-# skriva det själv. Om man dessutom bara behöver text och inte
-# kontaktobjekt i info-modulen kan indata .json vara väldigt simpel.
+# skriva det själv. Det här är ett försök att göra det lite enklare att
+# lägga in just text till info-modulen.
 import json, os
 
 # Läser in en .json-fil i samma mapp som skriptet.
